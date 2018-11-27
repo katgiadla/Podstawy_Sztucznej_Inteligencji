@@ -5,9 +5,9 @@ wej_out = [1.6633e+03 1.6880e+03 1.6867e+03 1.7764e+03 1.7800e+03 0.0 1.9495e+03
 
 testowe = zeros(1);
 
-net = feedforwardnet(2); %tworzenie sieci z 2 warstwami ukrytymi
+net = feedforwardnet(3); %tworzenie sieci z 2 warstwami ukrytymi
 net.trainFcn = 'traingd'; %algorytm wstecznej propagacji
-net.trainParam.mu = 0.1; %wsp. uczenia
+net.trainParam.lr = 0.5; %wsp. uczenia
 net.trainParam.mc = 0.5; %bezwladnosc
 net = train(net, wej_in, wej_out);
 efekty = zeros(size(net));
